@@ -96,8 +96,3 @@ class DecodeCryptoNode:
 
         # 提取最终VAE解码后的图像数据（对应节点8的输出）
         return (outputs["8"][0],)  # 返回元组格式的IMAGE类型
-
-
-# 注册节点
-NODE_CLASS_MAPPINGS = {"DecodeCryptoNode": DecodeCryptoNode}
-NODE_DISPLAY_NAME_MAPPINGS = {"DecodeCryptoNode": "🔓工作流解密器"}
