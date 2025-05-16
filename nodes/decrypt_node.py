@@ -1,3 +1,6 @@
+from .excute import execute_workflow
+
+
 class AlwaysEqualProxy(str):
     def __eq__(self, _):
         return True
@@ -83,16 +86,4 @@ class DecodeCryptoNode:
             },
         }
 
-        # 将测试数据替换为实际加密数据（待实现解密逻辑）
-        workflow_data = testJsonData  # 这里应该替换为解密后的数据
-
-        # 创建执行上下文
-        from comfy import PromptExecutor
-
-        executor = PromptExecutor()
-
-        # 执行工作流并获取结果
-        outputs, _ = executor.execute(workflow_data, {})
-
-        # 提取最终VAE解码后的图像数据（对应节点8的输出）
-        return (outputs["8"][0],)  # 返回元组格式的IMAGE类型
+        return execute_workflow(testJsonData)
