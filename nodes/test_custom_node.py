@@ -22,23 +22,23 @@ class TestCustomNode:
         # 固定参数配置
         # 1. 加载checkpoint
         nodes["checkpoint"] = graph.node(
-            node_type="CheckpointLoaderSimple",
+            class_type="CheckpointLoaderSimple",
             ckpt_name="v1-5-pruned-emaonly-fp16.safetensors",
         )
 
         # 2. 生成空latent
         nodes["latent"] = graph.node(
-            node_type="EmptyLatentImage", width=512, height=512, batch_size=1
+            class_type="EmptyLatentImage", width=512, height=512, batch_size=1
         )
 
         # 3. 文本编码
         nodes["clip"] = graph.node(
-            node_type="CLIPTextEncode", text=text, clip=nodes["checkpoint"].out(1)
+            class_type="CLIPTextEncode", text=text, clip=nodes["checkpoint"].out(1)
         )
 
         # 4. 采样
         nodes["sampler"] = graph.node(
-            node_type="KSampler",
+            class_type="KSampler",
             seed=156680208700286,
             steps=20,
             cfg=8,
@@ -53,7 +53,7 @@ class TestCustomNode:
 
         # 5. VAE解码
         nodes["vae"] = graph.node(
-            node_type="VAEDecode",
+            class_type="VAEDecode",
             samples=nodes["sampler"].out(0),
             vae=nodes["checkpoint"].out(2),
         )
