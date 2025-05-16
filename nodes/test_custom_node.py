@@ -57,7 +57,10 @@ class TestCustomNode:
             samples=nodes["sampler"].out(0),
             vae=nodes["checkpoint"].out(2),
         )
+
+        graph.output(nodes["vae"].out(0))
+
         return {
-            "result": (nodes["vae"].out(0)),
+            "result": (nodes["vae"].out(0),),
             "expand": graph.finalize(),
         }
