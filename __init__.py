@@ -1,7 +1,7 @@
-from .nodes.decrypt_node import DecodeCryptoNode
+from .nodes.test_custom_node import TestCustomNode
 
 # 注册节点
-NODE_CLASS_MAPPINGS = {"DecodeCryptoNode": DecodeCryptoNode}
-NODE_DISPLAY_NAME_MAPPINGS = {"DecodeCryptoNode": "🔓工作流解密器"}
+NODE_CLASS_MAPPINGS = {"TestCustomNode": TestCustomNode}
+NODE_DISPLAY_NAME_MAPPINGS = {"TestCustomNode": "测试自定义节点"}
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

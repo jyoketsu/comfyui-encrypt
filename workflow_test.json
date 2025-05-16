@@ -1,0 +1,17 @@
+{
+  "1": {
+    "inputs": {
+      "text": "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+    },
+    "class_type": "TestCustomNode",
+    "_meta": { "title": "测试自定义节点" }
+  },
+  "2": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": ["1", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": { "title": "保存图像" }
+  }
+}
