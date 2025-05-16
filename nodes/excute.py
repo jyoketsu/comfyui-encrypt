@@ -13,5 +13,5 @@ def execute_workflow(workflow):
         history = requests.get(f"http://localhost:8188/history/{prompt_id}").json()
         if prompt_id in history:
             outputs = history[prompt_id]["outputs"]
-            if "8" in outputs:  # 假设节点8是最终输出
-                return outputs["8"]["images"][0]
+            if "9" in outputs:  # 假设节点8是最终输出
+                return outputs["9"]["images"][0]

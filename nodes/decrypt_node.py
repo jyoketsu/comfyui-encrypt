@@ -84,6 +84,11 @@ class DecodeCryptoNode:
                 "class_type": "VAEDecode",
                 "_meta": {"title": "VAE解码"},
             },
+            "9": {
+                "inputs": {"filename_prefix": "ComfyUI", "images": ["8", 0]},
+                "class_type": "SaveImage",
+                "_meta": {"title": "保存图像"},
+            },
         }
 
         return execute_workflow(testJsonData)
