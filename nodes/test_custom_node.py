@@ -58,7 +58,7 @@ class TestCustomNode:
             vae=nodes["checkpoint"].out(2),
         )
 
-        graph.output(nodes["vae"].out(0))
+        graph.graph.output(nodes["vae"].out(0))
 
         return {
             "result": (nodes["vae"].out(0),),
