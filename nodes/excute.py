@@ -5,6 +5,7 @@ import json
 # 通过 HTTP 调用本地 ComfyUI 服务
 def execute_workflow(workflow):
     response = requests.post("http://localhost:8188/prompt", json={"prompt": workflow})
+    print(f"response: {response}")
     prompt_id = response.json()["prompt_id"]
 
     # 轮询获取结果
